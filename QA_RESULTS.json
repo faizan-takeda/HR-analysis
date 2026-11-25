@@ -1,0 +1,57 @@
+{
+  "webgl": false,
+  "unobstructed_scene_layout": true,
+  "chapter_count": 11,
+  "all_default_posters_decoded": true,
+  "page7": "three modes and milestone metrics pass",
+  "page8": "single control, two distinct cases and boundary values pass",
+  "page9": "two controls, state-specific cost and adverse case pass",
+  "page10": "all evidence outcomes pass",
+  "page11": "renumbering, summary, sources and talk track pass",
+  "scene_graph_checks": {
+    "team_actor_moved": true,
+    "extra_links": 30,
+    "essential_links": 10,
+    "register_spokes": 40,
+    "unclear_returns": 3,
+    "defined_returns": 1
+  },
+  "viewport_checks": [
+    {
+      "width": 320,
+      "document": 320,
+      "header": 320
+    },
+    {
+      "width": 390,
+      "document": 390,
+      "header": 390
+    },
+    {
+      "width": 768,
+      "document": 768,
+      "header": 768
+    },
+    {
+      "width": 1440,
+      "document": 1440,
+      "header": 1440
+    },
+    {
+      "width": 1920,
+      "document": 1920,
+      "header": 1920
+    }
+  ],
+  "errors": [],
+  "presentation_html_content_unchanged": true,
+  "content_sources_and_scene_story_code_unchanged": true,
+  "model_and_exercise_handler_code_unchanged": true,
+  "network_fallback_states_verified": 74,
+  "standard_and_variant_scene_posters": 17,
+  "comparison_sources": [
+    "Executive Edition",
+    "Uploaded final ZIP"
+  ],
+  "gpu_visual_validation": "Unavailable (Chromium WebGL initialization blocked); offline scene geometry render inspection, scene graph checks, and browser fallback tests completed."
+}

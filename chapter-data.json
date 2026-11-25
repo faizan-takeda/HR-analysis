@@ -1,0 +1,90 @@
+[
+  {
+    "chapter": 1,
+    "title": "Enterprise capability",
+    "headline": "People are the advantage.",
+    "decision": "Authorize a bounded test on a scientific and a digital or commercial mission.",
+    "success": "Compare delivery, quality and capability growth on two real missions.",
+    "guard": "No restructuring, headcount target or new platform commitment."
+  },
+  {
+    "chapter": 2,
+    "title": "Future capabilities",
+    "headline": "Tools change. Judgment must endure.",
+    "decision": "Use critical-task profiles in the selected missions.",
+    "success": "Measure successful independent task completion, quality and time to competence.",
+    "guard": "Qualifications, human review and regulated controls remain mandatory."
+  },
+  {
+    "chapter": 3,
+    "title": "Talent allocation",
+    "headline": "Fill the capability gap, not the vacancy.",
+    "decision": "Require a capability check before selected requisitions.",
+    "success": "Track qualified mission coverage, time to contribution and backfill risk.",
+    "guard": "Do not move capacity out of critical work or count unqualified employees."
+  },
+  {
+    "chapter": 4,
+    "title": "Hiring excellence",
+    "headline": "Hire on evidence, not impressions.",
+    "decision": "Trial a common rubric in selected role families.",
+    "success": "Check assessor agreement, fairness, quality of hire and time to contribution.",
+    "guard": "Mandatory qualifications and accessible, locally lawful assessments are non-negotiable."
+  },
+  {
+    "chapter": 5,
+    "title": "Adaptive problem-solving",
+    "headline": "Hire for what happens when the answer changes.",
+    "decision": "Test short, role-specific assessments before using them in selection.",
+    "success": "Calibrate assessors on anchored observations; compare subsequent job performance and fairness.",
+    "guard": "No production work, forced choices or unsupported predictive scores."
+  },
+  {
+    "chapter": 6,
+    "title": "Growth and mobility",
+    "headline": "Training is an activity. Capability is an outcome.",
+    "decision": "Connect learning records to approved capability opportunities in the test.",
+    "success": "Track validated work products, internal moves, time to independence and retention.",
+    "guard": "Protect learning time, qualification standards and fair access to mobility."
+  },
+  {
+    "chapter": 7,
+    "title": "Team effectiveness",
+    "headline": "Build the team for the mission.",
+    "decision": "Use readiness and capability growth together when allocating talent.",
+    "success": "Check delivery, quality, qualification and protected development time.",
+    "guard": "No forced ranking, arbitrary team size or trade-off against safety."
+  },
+  {
+    "chapter": 8,
+    "title": "Coordination and reuse",
+    "headline": "See the work before starting more.",
+    "decision": "Add a discover-before-build check to existing work intake.",
+    "success": "Measure actual coordination time, reuse and decision lead time. Keep required quality reviews.",
+    "guard": "Retain quality reviews, local requirements and direct dependency conversations."
+  },
+  {
+    "chapter": 9,
+    "title": "Partner ownership",
+    "headline": "Define what good looks like before delivery.",
+    "decision": "Agree acceptance criteria and knowledge-transfer requirements before strategic work starts.",
+    "success": "Track first-pass acceptance, rework cost, quality and internal maintainability.",
+    "guard": "Do not insource commodity services or extend manufacturing rules beyond their scope."
+  },
+  {
+    "chapter": 10,
+    "title": "Evidence-led implementation",
+    "headline": "Prove value before scaling.",
+    "decision": "Use common evidence gates in existing portfolio processes.",
+    "success": "Scale only when the agreed outcome improves and quality, fairness and feasibility hold.",
+    "guard": "Safety, privacy, employee consultation and independent quality review cannot be bypassed."
+  },
+  {
+    "chapter": 11,
+    "title": "Enterprise decision",
+    "headline": "Every mission should make Takeda stronger.",
+    "decision": "Authorize two bounded missions using existing systems and a common evidence standard.",
+    "success": "Track delivery, quality, capability growth and retained knowledge. Scale only what works.",
+    "guard": "No universal policy, technology platform or predetermined savings target."
+  }
+]

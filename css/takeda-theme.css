@@ -1,0 +1,162 @@
+/* Takeda corporate theme layer (from "Corporate PPT Template.pptx", colour scheme "Takeda 2021").
+   UI chrome only. Deliberately NOT styled here, because they are part of the 3D world:
+   .stage-view backdrop (the transparent WebGL canvas renders over it), .stage-poster,
+   .stage-pin labels, scene-guide legend dots and fallback diagrams. */
+
+/* The template is light-only; keep tokens identical even when the OS prefers dark. */
+:root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
+  color-scheme: light;
+  --tk-red: #E1242A;
+  --tk-red-dark: #BD120A;
+  --tk-maroon: #891515;
+  --tk-charcoal: #34373F;
+  --tk-grey: #A1A4AC;
+  --tk-light: #EDF2F4;
+  --tk-panel: #F6F8F9;
+  --tk-ink-2: #4B4E56;
+  --tk-ink-3: #6B6E76;
+  --tk-line: #DCE2E6;
+  --tk-line-2: #E8EDF0;
+  --tk-curve: 32px;
+
+  --bg: #FFFFFF; --bg-alt: var(--tk-panel);
+  --surface: #FFFFFF; --surface-2: var(--tk-light);
+  --ink: var(--tk-charcoal); --ink-2: var(--tk-ink-2); --ink-3: var(--tk-ink-3);
+  --line: var(--tk-line); --line-2: var(--tk-line-2);
+  --red: var(--tk-red); --red-ink: var(--tk-red-dark); --red-soft: #FDEDED;
+  --teal: var(--tk-charcoal); --teal-ink: var(--tk-charcoal); --teal-soft: var(--tk-light);
+  --amber: var(--tk-maroon); --amber-soft: #F6E8E8;
+  --tag-bg: rgba(255, 255, 255, 0.94); --tag-ink: var(--tk-charcoal);
+  --shadow: 0 1px 2px rgba(52, 55, 63, 0.06), 0 18px 40px -26px rgba(52, 55, 63, 0.4);
+  --sans: Calibri, Carlito, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --serif: var(--sans);
+}
+body { background: #FFFFFF; color: var(--tk-charcoal); font-family: var(--sans); }
+
+/* ---------- top bar: official logo only ---------- */
+.topbar { background: rgba(255, 255, 255, 0.97); border-bottom: 1px solid var(--tk-line-2); }
+.brand { gap: 0; padding: 4px 0; line-height: 0; border-radius: 4px; }
+.brand-logo { width: auto; height: 36px; max-width: none; }
+.now p { color: var(--tk-ink-3); }
+.now #nowTitle { color: var(--tk-charcoal); font-weight: 600; }
+.pg { border-color: var(--tk-line); color: var(--tk-charcoal); }
+.pg:hover:not(:disabled) { background: var(--tk-light); border-color: var(--tk-grey); }
+.tools button { color: var(--tk-charcoal); border-radius: 4px; }
+.tools button:hover { background: var(--tk-light); color: var(--tk-charcoal); }
+.tools button[aria-pressed="false"] { color: var(--tk-ink-3); }
+.progress i { background: var(--tk-red); }
+
+/* ---------- chapter canvas ---------- */
+.chapter.executive { background: #FFFFFF; border-bottom: 1px solid var(--tk-line-2); }
+.chapter.executive:nth-of-type(even) { background: var(--tk-panel); }
+
+.eyebrow { color: var(--tk-ink-3); }
+.eyebrow span { color: var(--tk-red); }
+/* Template title treatment: Takeda-red vertical rule with the title set beside it. */
+.exec-head h1, .exec-head h2 {
+  font-family: var(--sans); font-weight: 700; line-height: 1.04; letter-spacing: -0.015em;
+  color: var(--tk-charcoal); border-left: 4px solid var(--tk-red); padding-left: 20px;
+  max-width: calc(17ch + 24px);
+}
+.opening .exec-head h1 { line-height: 0.98; max-width: calc(10ch + 24px); }
+.dek { color: var(--tk-ink-2); }
+.story-index { color: var(--tk-grey); }
+.exec-story article { border-bottom-color: var(--tk-line); }
+.exec-story h3, .exec-foot > div > span { color: var(--tk-red); }
+.exec-story .solution h3 { color: var(--tk-maroon); }
+.exec-story p { color: var(--tk-charcoal); }
+
+/* Visual card: square frame with the template's single curved ("Dakiyama") corner. */
+.exec-visual {
+  background: #FFFFFF; border: 1px solid var(--tk-line);
+  border-radius: 0 0 var(--tk-curve) 0;
+  box-shadow: 0 1px 2px rgba(52, 55, 63, 0.05), 0 20px 44px -30px rgba(52, 55, 63, 0.45);
+}
+
+/* ---------- stage chrome around (not inside) the 3D view ---------- */
+.stage .stage-hud { background: #FFFFFF; border-bottom: 1px solid var(--tk-line-2); }
+.stage-hud .hud-title { color: var(--tk-charcoal); font-weight: 600; }
+.stage-hud .hud-reset { background: var(--tk-light); color: var(--tk-charcoal); }
+.scene-expand { border-color: var(--tk-line); background: #FFFFFF; color: var(--tk-charcoal); border-radius: 4px; }
+.scene-expand:hover { background: var(--tk-light); }
+.scene-expand:focus-visible { outline-color: var(--tk-red); }
+.stage figcaption { background: var(--tk-panel); border-top-color: var(--tk-line-2); color: var(--tk-ink-2); }
+.stage .stage-hint, .stage .nogl-note { background: var(--tk-panel); color: var(--tk-ink-3) !important; }
+.stage-guide { background: #FFFFFF; border-top-color: var(--tk-line-2); color: var(--tk-ink-2); }
+.stage-guide summary { color: var(--tk-charcoal); }
+.no-gl .state-fallback { background: var(--tk-panel); border-top-color: var(--tk-line-2); }
+.state-fallback details summary { color: var(--tk-charcoal); }
+
+/* ---------- controls and readouts ---------- */
+.switchrow button, .action { border-color: var(--tk-line); color: var(--tk-charcoal); border-radius: 4px; }
+.switchrow button:hover { border-color: var(--tk-grey); }
+.switchrow button[aria-pressed=true] { background: var(--tk-charcoal); border-color: var(--tk-charcoal); color: #FFFFFF; }
+.action { background: var(--tk-red); border-color: var(--tk-red); color: #FFFFFF; }
+.action:hover { background: var(--tk-red-dark); border-color: var(--tk-red-dark); }
+.flowstrip { color: var(--tk-charcoal); }
+.flowstrip span { background: var(--tk-light); border-radius: 4px; }
+.flowstrip i { color: var(--tk-red); }
+.liveout { color: var(--tk-charcoal); background: var(--tk-light); border-left-color: var(--tk-red); }
+.metricline strong { font-family: var(--sans); font-weight: 700; letter-spacing: -0.03em; color: var(--tk-red); }
+.metricline span { color: var(--tk-charcoal); }
+.metricline small, .fine { color: var(--tk-ink-3); }
+.model { border-top-color: var(--tk-line-2); }
+.model summary { color: var(--tk-charcoal); }
+.model label { color: var(--tk-ink-2); }
+.model input, .model select { border-color: var(--tk-line); color: var(--tk-charcoal); border-radius: 4px; }
+.model input:focus { border-color: var(--tk-charcoal); outline: none; }
+.candidate-table { color: var(--tk-charcoal); }
+.candidate-table > div { border-bottom-color: var(--tk-line-2); }
+.candidate-table > div:first-child, .case-line b { color: var(--tk-red); }
+.case-line { color: var(--tk-charcoal); }
+.financehero > div { background: var(--tk-charcoal); }
+.financehero > .capacity { background: var(--tk-light); color: var(--tk-charcoal); }
+.financehero strong, .dual-metrics strong { font-family: var(--sans); font-weight: 700; letter-spacing: -0.03em; }
+.costbar { color: var(--tk-ink-2); }
+.costbar i { background: var(--tk-light); }
+.costbar i b { background: var(--tk-charcoal); }
+.costbar.cost i b { background: var(--tk-red); }
+
+.exercise-intro { color: var(--tk-charcoal); }
+.exercise-intro span { color: var(--tk-ink-3); }
+.dual-metrics > div { background: var(--tk-panel); border-color: var(--tk-line); border-radius: 4px 4px 14px 4px; }
+.dual-metrics > div.chosen { background: #FFFFFF; border-color: var(--tk-charcoal); }
+.dual-metrics span { color: var(--tk-ink-2); }
+.dual-metrics strong { color: var(--tk-charcoal); }
+.dual-metrics small { color: var(--tk-ink-3); }
+.dual-metrics > div:first-child.chosen strong,
+.dual-metrics strong.negative, .impact-line strong.negative { color: var(--tk-red); }
+.impact-line { background: var(--tk-light); color: var(--tk-charcoal); border-radius: 4px; }
+.simple-input { color: var(--tk-charcoal); }
+.simple-input input { --teal: var(--tk-red); accent-color: var(--tk-red); }
+
+/* ---------- decision footer ---------- */
+.exec-foot { border-top: 1px solid var(--tk-line); }
+.exec-foot p { color: var(--tk-charcoal); }
+.detail-button, .exec-foot .src-btn { border-radius: 4px; font-weight: 600; }
+.detail-button { border-color: var(--tk-red); background: #FFFFFF; color: var(--tk-red); }
+.detail-button:hover { background: var(--tk-red); color: #FFFFFF; }
+.exec-foot .src-btn { border-color: var(--tk-line); background: #FFFFFF; color: var(--tk-charcoal); }
+.exec-foot .src-btn:hover { border-color: var(--tk-grey); background: var(--tk-light); }
+
+/* ---------- navigation dots and drawer ---------- */
+.dots { background: rgba(255, 255, 255, 0.92); box-shadow: 0 0 0 1px var(--tk-line-2); }
+.dots button { background: #D3D9DD; }
+.dots button.on { background: var(--tk-red); }
+.dots button:hover { background: var(--tk-grey); }
+dialog#drawer { border-color: var(--tk-line); border-radius: 0 0 var(--tk-curve) 0; }
+dialog#drawer::backdrop { background: rgba(52, 55, 63, 0.55); }
+.drawer-head { border-bottom: 3px solid var(--tk-red); }
+.drawer-head h2 { font-weight: 700; color: var(--tk-charcoal); }
+#drawerClose { background: var(--tk-light); color: var(--tk-charcoal); }
+.ref a, .linkish { color: var(--tk-red-dark); }
+.ref-n, .toc span { color: var(--tk-red); }
+.toc button:hover, .toc button[aria-current="true"] { background: var(--tk-light); }
+
+@media (max-width: 760px) {
+  .brand-logo { height: 30px; }
+  .exec-head h1, .exec-head h2 { padding-left: 14px; max-width: calc(20ch + 18px); }
+}
+@media (max-width: 380px) {
+  .brand-logo { height: 26px; }
+}
