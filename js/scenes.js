@@ -971,20 +971,18 @@
     const rings = [[2.4, 0.12, 0xE6EBEE], [1.85, 0.26, 0xF2F4F6], [1.3, 0.4, 0xFFFFFF], [0.8, 0.56, C.red]];
     rings.forEach(function (r) { const m = K.cyl(r[0], r[0], r[1], K.mat(r[2], { roughness: r[2] === C.red ? 0.3 : 0.5 }), 64); scene.add(m); });
     const heartShape = new T.Shape();
-    heartShape.moveTo(0, 0.28);
-    heartShape.bezierCurveTo(0, 0.62, -0.54, 0.78, -0.86, 0.42);
-    heartShape.bezierCurveTo(-1.18, 0.05, -1.00, -0.42, -0.60, -0.70);
-    heartShape.bezierCurveTo(-0.26, -0.94, -0.02, -0.70, 0, -0.46);
-    heartShape.bezierCurveTo(0.02, -0.70, 0.26, -0.94, 0.60, -0.70);
-    heartShape.bezierCurveTo(1.00, -0.42, 1.18, 0.05, 0.86, 0.42);
-    heartShape.bezierCurveTo(0.54, 0.78, 0, 0.62, 0, 0.28);
+    heartShape.moveTo(0, -0.98);
+    heartShape.bezierCurveTo(-0.28,-0.73,-1.02,-0.12,-1.02,0.42);
+    heartShape.bezierCurveTo(-1.02,1.02,-0.35,1.18,0,0.67);
+    heartShape.bezierCurveTo(0.35,1.18,1.02,1.02,1.02,0.42);
+    heartShape.bezierCurveTo(1.02,-0.12,0.28,-0.73,0,-0.98);
     const heartGeo = new T.ExtrudeGeometry(heartShape, { depth: 0.36, bevelEnabled: true, bevelThickness: 0.08, bevelSize: 0.08, bevelSegments: 3, curveSegments: 28 });
     heartGeo.center();
     const heart = new T.Mesh(heartGeo, new T.MeshPhysicalMaterial({ color: C.red, roughness: 0.28, metalness: 0.05, clearcoat: 1, clearcoatRoughness: 0.18 }));
-    heart.scale.set(0.65,0.65,0.65); heart.rotation.x = -0.22; heart.position.y = 1.18; heart.castShadow = true; heart.receiveShadow = true; scene.add(heart);
+    heart.scale.set(0.93,0.93,0.93); heart.rotation.x = -0.48; heart.position.y = 1.60; heart.castShadow = true; heart.receiveShadow = true; scene.add(heart);
     const heartHalo = K.glowDisc(1.55, 0xFF3355, 0.52); heartHalo.position.y = 0.02; scene.add(heartHalo);
     scene.add(K.glowDisc(2.6, 0xFF2D4B, 0.24));
-    ctx.label('Patient, trust, reputation, business', V(0, 1.85, 0), { cls: 'red' });
+    ctx.label('Patient, trust, reputation, business', V(0, 2.75, 0), { cls: 'red' });
     const names = ['Priorities', 'Critical missions', 'Find existing capability', 'Redeploy, develop, hire or partner', 'Clear ownership', 'Execute together', 'Measure outcomes', 'Share, grow, reinvest'];
     const stations = [];
     for (let k = 0; k < 8; k++) {
@@ -994,7 +992,7 @@
       g.add(K.rbox(1.25, 0.42, 1.25, 0.16, K.mat(C.white, { roughness: 0.35 })));
       const bandM = new T.MeshStandardMaterial({ color: 0x1D2B38, emissive: 0x2FB3A3, emissiveIntensity: 0.4, roughness: 0.4 });
       const band = K.rbox(1.28, 0.08, 1.28, 0.16, bandM); band.position.y = 0.3; g.add(band);
-      const icon = new T.Group(); icon.position.y = 0.42; g.add(icon);
+      const icon = new T.Group(); icon.position.y = 0.42; icon.userData.noBatch = true; g.add(icon);
       const red = K.mat(C.red, { roughness: 0.35 }), teal = K.mat(C.teal, { roughness: 0.4 }), wht = K.mat(C.white, { roughness: 0.4 });
       if (k === 0) { icon.add(K.cyl(0.03, 0.03, 1.0, K.metal())); const f = K.box(0.45, 0.28, 0.03, red); f.position.set(0.22, 0.68, 0); icon.add(f); }
       if (k === 1) { [0.36, 0.24, 0.12].forEach(function (r, i) { const t = new T.Mesh(new T.TorusGeometry(r, 0.04, 10, 40), i % 2 ? wht : red); t.position.y = 0.5; t.castShadow = true; icon.add(t); }); const st = K.box(0.05, 0.14, 0.05, K.mat(C.graphite)); icon.add(st); }
@@ -1028,7 +1026,7 @@
           st.icon.position.y = 0.42 + k * 0.12;
           if (st.icon.userData.spin) st.icon.userData.spin.rotation.y = t * 1.5;
         });
-        heart.position.y = 1.18 + Math.sin(t * 1.3) * 0.06;
+        heart.position.y = 1.60 + Math.sin(t * 1.3) * 0.06;
         heart.rotation.z = Math.sin(t * 1.05) * 0.05;
         walkers.forEach(function (w) {
           const a = w.a + t * w.sp; const r = 6.9;

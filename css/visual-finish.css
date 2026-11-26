@@ -3,8 +3,8 @@
 .stage .stage-hud{position:static;inset:auto;display:flex;align-items:center;gap:8px;min-height:38px;padding:7px 12px;background:#f9fbfa;border-bottom:1px solid #dbe3de;pointer-events:auto}
 .stage-hud .hud-title{padding:0;background:none;border-radius:0;box-shadow:none;letter-spacing:.035em;line-height:1.35;font-size:11px;color:#314b48;text-transform:none;max-width:none}
 .stage-hud .hud-reset{box-shadow:none;background:#e7eeeb;width:28px;height:28px;flex:none}
-.exec-visual .stage-view{background:radial-gradient(ellipse at 49% 28%,#fafcf9 0%,#e7eeea 58%,#cbdcd6 100%);height:clamp(300px,45vh,530px);isolation:isolate}
-.exec-visual .stage-poster,.no-gl[data-scene=team] .stage-poster,.no-gl[data-scene=ownership] .stage-poster,.no-gl[data-scene=network] .stage-poster{background-size:contain;background-position:center;background-repeat:no-repeat;opacity:1}
+.exec-visual .stage-view{background:radial-gradient(ellipse at 50% 34%,#fbfcfa 0%,#eef4f0 46%,#d7e4de 72%,#bfd2ca 100%);height:clamp(360px,53vh,660px);isolation:isolate}
+.exec-visual .stage-poster,.no-gl[data-scene=team] .stage-poster,.no-gl[data-scene=ownership] .stage-poster,.no-gl[data-scene=network] .stage-poster{background-size:108% auto;background-position:center 56%;background-repeat:no-repeat;opacity:1}
 .exec-visual .stage-poster.hidden{opacity:0}
 .stage .stage-labels{position:absolute;inset:0;display:block!important;pointer-events:none;z-index:4;overflow:hidden}
 .stage-pin{position:absolute;left:0;top:0;transform:translate(-50%,-115%);padding:4px 8px;border-radius:999px;background:rgba(249,251,250,.92);border:1px solid rgba(206,217,211,.95);box-shadow:0 8px 18px rgba(28,48,43,.10);color:#29443f;font-size:10px;line-height:1.15;font-weight:650;letter-spacing:.01em;white-space:nowrap;max-width:min(32vw,210px);text-align:center;text-wrap:balance;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
@@ -30,15 +30,15 @@
 .state-fallback details summary{cursor:pointer;font-weight:650;font-size:11px;color:#405651}
 .state-fallback .fallback-team,.state-fallback .fallback-belt{border:0;background:transparent;box-shadow:none;padding:2px 0}
 .state-fallback .fallback-team{display:grid;grid-template-columns:1fr auto 1fr;gap:5px}.state-fallback .fallback-team>div{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px}
-#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(300px,43vh,510px)}
-@media(min-width:761px) and (max-height:850px){.exec-visual .stage-view,#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(280px,39vh,420px)}}
-@media(max-width:760px){.exec-visual .stage-view,.opening .stage-view,.closing .stage-view,#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(250px,66vw,430px)}.stage .stage-hud{padding:6px 9px}.stage-guide{padding:7px 9px}.stage .nogl-note,.stage .stage-hint{padding:5px 9px!important}}
+#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(370px,50vh,620px)}
+@media(min-width:761px) and (max-height:850px){.exec-visual .stage-view,#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(300px,43vh,480px)}}
+@media(max-width:760px){.exec-visual .stage-view,.opening .stage-view,.closing .stage-view,#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(300px,78vw,520px)}.stage .stage-hud{padding:6px 9px}.stage-guide{padding:7px 9px}.stage .nogl-note,.stage .stage-hint{padding:5px 9px!important}.exec-visual .stage-poster{background-size:contain;background-position:center 58%}}
 @media(prefers-reduced-motion:reduce){.stage *{animation:none!important;transition:none!important}}
 
 /* More canvas area without making the comparison controls unnecessarily distant. */
-#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(300px,37vh,470px)}
-@media(min-width:761px) and (max-height:850px){#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(265px,35vh,365px)}}
-@media(max-width:760px){#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(250px,66vw,430px)}}
+#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(340px,44vh,540px)}
+@media(min-width:761px) and (max-height:850px){#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(285px,39vh,410px)}}
+@media(max-width:760px){#c7 .stage-view,#c8 .stage-view,#c9 .stage-view{height:clamp(300px,78vw,520px)}}
 .scene-toolbar-controls{display:flex;align-items:center;gap:6px;flex:none}
 .scene-expand{border:1px solid #cfdbd5;background:#f9fbfa;color:#34534d;border-radius:6px;padding:5px 8px;font-size:10px;white-space:nowrap;cursor:pointer}
 .scene-expand:hover{background:#e6efea}.scene-expand:focus-visible{outline:2px solid #14766c;outline-offset:2px}

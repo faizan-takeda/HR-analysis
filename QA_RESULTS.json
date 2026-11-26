@@ -1,5 +1,5 @@
 {
-  "webgl": false,
+  "webgl": true,
   "unobstructed_scene_layout": true,
   "chapter_count": 11,
   "all_default_posters_decoded": true,
@@ -43,15 +43,5 @@
       "header": 1920
     }
   ],
-  "errors": [],
-  "presentation_html_content_unchanged": true,
-  "content_sources_and_scene_story_code_unchanged": true,
-  "model_and_exercise_handler_code_unchanged": true,
-  "network_fallback_states_verified": 74,
-  "standard_and_variant_scene_posters": 17,
-  "comparison_sources": [
-    "Executive Edition",
-    "Uploaded final ZIP"
-  ],
-  "gpu_visual_validation": "Unavailable (Chromium WebGL initialization blocked); offline scene geometry render inspection, scene graph checks, and browser fallback tests completed."
+  "errors": []
 }

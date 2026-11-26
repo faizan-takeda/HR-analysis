@@ -1,0 +1,18 @@
+/* Corporate theme untouched; composition adapts to each scene silhouette. */
+.stage[data-scene=campus]{--scene-ratio:2.65}.stage[data-scene=tools]{--scene-ratio:3.03}.stage[data-scene=allocation]{--scene-ratio:2.48}.stage[data-scene=tower]{--scene-ratio:2.48}.stage[data-scene=route]{--scene-ratio:2.88}.stage[data-scene=journey]{--scene-ratio:3.15}.stage[data-scene=team]{--scene-ratio:2.48}.stage[data-scene=network]{--scene-ratio:1.57}.stage[data-scene=ownership]{--scene-ratio:2.98}.stage[data-scene=gates]{--scene-ratio:3.45}.stage[data-scene=flywheel]{--scene-ratio:1.55}
+.chapter .exec-visual .stage .stage-view{width:100%;height:auto!important;aspect-ratio:var(--scene-ratio,1.82);background:radial-gradient(ellipse at 50% 38%,#f9fbf8,#e5eee9 62%,#d1dfd8);min-height:0}
+.stage .stage-poster{background-size:contain!important;background-position:center center!important;background-repeat:no-repeat!important}
+.stage .stage-labels{display:none!important}.stage .stage-labels.live-pins{display:block!important}
+.stage .stage-pin{font-size:clamp(9px,.76vw,11px);line-height:1.2;padding:3px 6px;max-width:138px;white-space:normal;text-wrap:balance;box-shadow:0 2px 6px #203d3222;background:#fffffff0;transform:none;border-radius:4px;backdrop-filter:none}
+.stage .stage-pin::after{display:none}.stage-pin[hidden]{display:none!important}
+.stage-labels svg.pin-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}.stage-labels .stage-pin{z-index:1}
+@media(min-width:761px){.chapter.executive .executive-plate{grid-template-columns:minmax(0,.73fr) minmax(0,1.37fr);column-gap:clamp(20px,2.8vw,48px)}}
+@media(min-width:761px) and (max-width:1024px) and (orientation:portrait){.chapter.executive .executive-plate{grid-template-columns:1fr;grid-template-areas:'head' 'visual' 'story' 'foot';gap:18px}.exec-head h1,.exec-head h2{max-width:25ch}.exec-story{display:grid;grid-template-columns:1fr 1fr;gap:14px}.exec-foot{grid-template-columns:1fr 1fr auto auto}}
+@media(max-width:760px){.stage .stage-pin{font-size:9px;padding:2px 4px;max-width:95px}.stage .stage-hud{min-height:36px}.chapter .exec-visual .stage .stage-view{aspect-ratio:var(--scene-ratio,1.82)}}
+.stage:fullscreen .stage-view{aspect-ratio:auto!important;flex:1 1 auto;min-height:60vh!important}
+
+.stage .stage-labels.poster-pins{display:block!important}.stage .stage-labels:not(.live-pins) .stage-pin:not(.poster-pin){display:none!important}
+@media(max-width:500px){.stage .stage-pin{font-size:8.5px;max-width:88px}.stage .stage-view{min-height:0}}
+
+/* Keep the narrative anchored to the top of tall comparison cards. */
+@media(min-width:1025px), (min-width:761px) and (orientation:landscape){.chapter.executive .executive-plate{grid-template-rows:max-content 1fr max-content}.chapter.executive .exec-head{align-self:start}.chapter.executive .exec-visual{align-self:center}.opening .exec-head h1{font-size:clamp(54px,4.9vw,82px);max-width:14ch}.closing .exec-head h2{font-size:clamp(42px,3.7vw,65px)}}

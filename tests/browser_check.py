@@ -8,12 +8,14 @@ for x in s.select('link[rel=stylesheet]'):
  t=s.new_tag('style');t.string=(root/x['href']).read_text();x.replace_with(t)
 for x in s.select('script[src]'):
  t=s.new_tag('script');t.string=(root/x['src']).read_text();x.replace_with(t)
+for x in s.select('img[src]'):
+ path=root/x['src'];x['src']='data:image/png;base64,'+base64.b64encode(path.read_bytes()).decode()
 for x in s.select('.stage-poster'):
  path=re.search(r'url\((.*?)\)',x['style']).group(1);x['style']='background-image:url(data:image/png;base64,'+base64.b64encode((root/path).read_bytes()).decode()+')'
 variant_script=s.new_tag('script');variant_script.string='window.TK_POSTERS='+json.dumps({x.stem:'data:image/'+('webp' if x.suffix=='.webp' else 'png')+';base64,'+base64.b64encode(x.read_bytes()).decode() for x in (root/'assets').iterdir() if x.suffix in ['.png','.webp'] if not x.stem.startswith('network-') or x.stem in ['network-shared','network-5-current','network-5-shared','network-40-current','network-40-shared']})+';';s.head.append(variant_script)
-html=str(s);shots=Path('/tmp/takeda-revision-shots');shots.mkdir(exist_ok=True);results={};errors=[]
+html=str(s);import tempfile;shots=Path(tempfile.gettempdir())/'takeda-revision-shots';shots.mkdir(exist_ok=True);results={};errors=[]
 with sync_playwright() as p:
- b=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--disable-dev-shm-usage']);page=b.new_page(viewport={'width':1440,'height':900},reduced_motion='reduce');page.on('pageerror',lambda e:errors.append(str(e)));page.set_content(html,wait_until='domcontentloaded');page.wait_for_timeout(200)
+ b=p.chromium.launch(**({'executable_path':'/usr/bin/chromium'} if Path('/usr/bin/chromium').exists() else {}),headless=True,args=['--no-sandbox','--disable-dev-shm-usage']);page=b.new_page(viewport={'width':1440,'height':900},reduced_motion='reduce');page.on('pageerror',lambda e:errors.append(str(e)));page.set_content(html,wait_until='domcontentloaded');page.wait_for_timeout(200)
  results['webgl']=page.evaluate('TK.Stage.ok');assert page.locator('.stage-view .stage-hud,.stage-view .state-fallback,.stage-view .nogl-note,.stage-view .stage-hint').count()==0;assert page.locator('.stage-guide').count()==11;results['unobstructed_scene_layout']=True;assert page.locator('.chapter').count()==11;results['chapter_count']=11
  def shot(i,extra=''):
   page.evaluate(f'document.getElementById("c{i}").scrollIntoView({{block:"start",behavior:"instant"}})');page.wait_for_timeout(180);page.screenshot(path=str(shots/f'{i:02}{extra}.png'),timeout=10000)
